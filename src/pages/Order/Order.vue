@@ -22,7 +22,7 @@
     .order  //订单
         width 100%
         .header
-            background-color #02a774
+            background-color #008aff
             position fixed
             z-index 100
             left 0
@@ -75,7 +75,7 @@
                 color #6a6a6a
             >button
                 display inline-block
-                background #02a774
+                background #008aff
                 font-size 14px
                 color #fff
                 border 0

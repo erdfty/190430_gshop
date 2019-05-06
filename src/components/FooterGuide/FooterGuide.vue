@@ -62,7 +62,7 @@
             color #999999
 
             &.on
-                color #02a774
+                color #008aff
 
             span
                 font-size 12px

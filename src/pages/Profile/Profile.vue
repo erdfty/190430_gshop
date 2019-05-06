@@ -106,7 +106,7 @@
         width 100%
         overflow hidden
         .header
-            background-color #02a774
+            background-color #008aff
             position fixed
             z-index 100
             left 0
@@ -150,7 +150,7 @@
                 clearFix()
                 position relative
                 display block
-                background #02a774
+                background #008aff
                 padding 20px 10px
                 .profile_image
                     float left
@@ -249,13 +249,13 @@
                         margin-left -10px
                         font-size 30px
                     .icon-order-s
-                        color #02a774
+                        color #008aff
                     .icon-jifen
                         color #ff5f3e
                     .icon-vip
                         color #f90
                     .icon-fuwu
-                        color #02a774
+                        color #008aff
                 .my_order_div
                     width 100%
                     border-bottom 1px solid #f1f1f1

@@ -6,15 +6,20 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
   import FooterGuide from './components/FooterGuide/FooterGuide.vue'
-  import {reqFoodTypes} from './api'
 
 
   export default {
-    async mounted () {
-      const result = await reqFoodTypes()
-      console.log(result)
+    mounted () {
+      // this.$store.dispatch('getAddress')
+      this.getAddress()
     },
+
+    methods: {
+      ...mapActions(['getAddress'])
+    },
+
     components: {
       FooterGuide
     }
@@ -25,5 +30,5 @@
     #app
         width 100%
         height 100%
-        /*background  #f5f5f5*/
+        background  #f5f5f5
 </style>

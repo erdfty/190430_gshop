@@ -14,10 +14,11 @@
     mounted () {
       // this.$store.dispatch('getAddress')
       this.getAddress()
+      this.getUserInfo()
     },
 
     methods: {
-      ...mapActions(['getAddress'])
+      ...mapActions(['getAddress','getUserInfo'])
     },
 
     components: {
@@ -30,5 +31,5 @@
     #app
         width 100%
         height 100%
-        background  #f5f5f5
+        /*background  #f5f5f5*/
 </style>

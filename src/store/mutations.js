@@ -13,6 +13,8 @@ import {
   RECEIVE_RATINGS,
   INCREMENT_FOOD_COUNT,
   DECREMENT_FOOD_COUNT,
+  CLEAR_CART,
+  RECEIVE_SEARCH_SHOPS
 } from './mutation-types'
 export default {
   [RECEIVE_ADDRESS] (state, {address}) {
@@ -52,7 +54,9 @@ export default {
       // food.count = 1 // 添加 count 属性, 并指定为 1
       // 问题: 新添加的属性没有数据劫持==>数据绑定==>更新了数据但界面不变
       Vue.set(food, 'count', 1) // 给有数据绑定的对象添加指定属性名和值的属性(有绑定)
-      state.shopCart.push(food) // 添加到购物车
+      // state.shopCart.push(food) // 添加到购物车
+      // 将food添加到cartFoods中
+      state.cartFoods.push(food)
     } else { // 有 count
       food.count++
     }
@@ -61,9 +65,22 @@ export default {
     if(food.count) { // count 有值才减 1
       food.count--
       if(food.count===0) {// 如果数量减为 0, 从购物车中移除
-        state.shopCart.splice(state.shopCart.indexOf(food), 1)
+        // 将food从cartFoods移除
+        state.cartFoods.splice(state.cartFoods.indexOf(food), 1)
       }
     }
+  },
+  [CLEAR_CART](state) {
+
+    //清除food中的count
+    state.cartFoods.forEach(food => food.count = 0)
+    //移除购物车中购物项
+    state.cartFoods = []
+
+  },
+
+  [RECEIVE_SEARCH_SHOPS] (state,{searchShops}) {
+    state.searchShops = searchShops
   },
 
 }
